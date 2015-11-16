@@ -1,0 +1,65 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="user-details">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <section style="margin-bottom: 20px;">
+      <div class="paper-font-display2">Hello {{profile.name}}!</div>
+      <p>
+        Imagine there was a ton of useful information here related specifically to your login credentials.  Of course,
+        feel free to <a href="/logout">logout</a> any time.
+      </p>
+    </section>
+
+    <section style="margin-bottom: 10px;">
+      <div class="paper-font-headline">Your Profile Details</div>
+    </section>
+
+    <section>
+      <div class="paper-font-title">User ID</div>
+      <div class="paper-font-caption">{{profile.user_id}}</div>
+    </section>
+
+    <section>
+      <div class="paper-font-title">Username</div>
+      <div class="paper-font-caption">{{profile.username}}</div>
+    </section>
+
+    <section>
+      <div class="paper-font-title">Email</div>
+      <div class="paper-font-caption">{{profile.email}}</div>
+    </section>
+
+    <section>
+      <div class="paper-font-title">Name</div>
+      <div class="paper-font-caption">{{profile.name}}</div>
+    </section>
+
+    <section>
+      <div class="paper-font-title">Given Name</div>
+      <div class="paper-font-caption">{{profile.given_name}}</div>
+    </section>
+
+    <section>
+      <div class="paper-font-title">Family Name</div>
+      <div class="paper-font-caption">{{profile.family_name}}</div>
+    </section>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'user-details'
+      });
+    })();
+  </script>
+
+</dom-module>

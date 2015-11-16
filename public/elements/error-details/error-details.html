@@ -1,0 +1,87 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="error-details">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <section style="margin-bottom: 20px;">
+      <div class="paper-font-display2">{{errorMessage}}</div>
+      <div class="paper-font-caption"><em>(This is unrecoverable so please report)</em></div>
+    </section>
+
+    <section style="margin-bottom: 10px;">
+      <div class="paper-font-headline">Request details</div>
+    </section>
+
+    <section>
+      <div class="paper-font-title">Method</div>
+      <div class="paper-font-caption">{{res.req.method}}</div>
+    </section>
+
+    <section>
+      <div class="paper-font-title">Path</div>
+      <div class="paper-font-caption">{{res.req.url}}</div>
+    </section>
+
+    <section style="margin-top: 20px; margin-bottom: 10px;">
+      <div class="paper-font-headline">Response details</div>
+    </section>
+
+    <section>
+      <div class="paper-font-title">Status code</div>
+      <div class="paper-font-caption">{{res.statusCode}}</div>
+    </section>
+
+    <section>
+      <div class="paper-font-title">Content type</div>
+      <div class="paper-font-caption">{{res.type}}</div>
+    </section>
+
+    <section>
+      <div class="paper-font-title">Headers</div>
+      <div class="container layout horizontal">
+        <div class="flex"><div class="paper-font-caption">Key</div></div>
+        <div class="flex"><div class="paper-font-caption">Value</div></div>
+      </div>
+      <hr />
+      <div class="container layout vertical">
+        <template is="dom-repeat" items="{{headersArray(res.headers)}}">
+          <div class="container layout horizontal">
+            <div class="flex"><div class="paper-font-caption">{{item.key}}</div></div>
+            <div class="flex"><div class="paper-font-caption">{{item.value}}</div></div>
+          </div>
+        </template>
+      </div>
+    </section>
+
+    <section>
+      <div class="paper-font-title">Body</div>
+      <div class="paper-font-caption">{{res.text}}</div>
+    </section>
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'error-details',
+        headersArray: function(headers) {
+          return Object.keys(headers).map(function(key) {
+            return {
+              key: key,
+              value: headers[key]
+            };
+          });
+        }
+      });
+    })();
+  </script>
+
+</dom-module>

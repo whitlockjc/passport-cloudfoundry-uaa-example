@@ -1,0 +1,30 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="anon-user-details">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <section>
+      <div class="paper-font-display2">Hello Anonymous!</div>
+      <p>
+        There is not much to see here as an anonymous user.  If you would like to see more, <a href="/login">login</a>.
+      </p>
+    </section>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'anon-user-details'
+      });
+    })();
+  </script>
+
+</dom-module>

@@ -1,0 +1,9 @@
+{
+  "authorizationURL": "http://localhost:8080/uaa/oauth/authorize",
+  "tokenURL": "http://localhost:8080/uaa/oauth/token",
+  "clientID": "login",
+  "clientSecret": "loginsecret",
+  "callbackURL": "http://localhost:3001/auth/provider/callback",
+  "logoutURL": "http://localhost:8080/uaa/logout.do",
+  "userProfileURL": "http://localhost:8080/uaa/userinfo"
+}
